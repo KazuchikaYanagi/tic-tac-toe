@@ -110,8 +110,7 @@ const Game: React.FC<GameProps> = ({ userId, username, roomId, setRoomId }) => {
         setWinner("Draw!!");
         socket?.emit("gameOver", { roomId });
       } else {
-        // 勝利者をサーバーが判断できるよう、現在はplayerSymbolと紐付け
-        // 実際にはサーバーでroom管理し、X/OとユーザーIDの対応を記録するべき
+        // tie with playerSymbol to be able to judge if who is winner by server
         const winnerId = userId;
         socket?.emit("gameOver", { roomId, winnerId });
         setWinner("You Win!😊");
