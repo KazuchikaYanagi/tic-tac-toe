@@ -8,23 +8,25 @@ const Home = () => {
         <img
           src="../../public/tic-tac-toe_lg-no_background.png"
           alt="logo"
-          className="w-80"
+          className="w-60 md:w-80"
         />
         <Link to="/signIn">
           <Button>Login</Button>
         </Link>
       </div>
 
-      <section className="w-full h-full p-8 bg-stone-800">
-        <div className="flex items-center justify-around pt-5 pb-14">
+      <section className="w-full h-full p-8 bg-stone-800" id="about">
+        <div className="flex flex-col items-center justify-around pt-5 md:flex-row pb-14">
           <img
             src="../../public/tic-tac-toe_no-background.png"
             alt="tic-tac-toe"
             className="w-52"
           />
-          <article className="w-1/2 font-MICRO text-stone-200">
-            <h1 className="py-5 text-5xl">How to play tic-tac-toe?</h1>
-            <p className="text-lg font-PIXELIFY">
+          <article className="md:w-1/2 font-MICRO text-stone-200">
+            <h1 className="py-5 text-3xl md:text-5xl">
+              How to play tic-tac-toe?
+            </h1>
+            <p className="text-base md:text-lg font-PIXELIFY">
               The rules of Tic-Tac-Toe are very simple. The player who first
               forms a row of their marks vertically, horizontally, or diagonally
               wins. On your turn, you can place your piece anywhere you like on
@@ -33,15 +35,17 @@ const Home = () => {
           </article>
         </div>
 
-        <div className="flex flex-row-reverse items-center justify-around py-5">
+        <div className="flex flex-col items-center justify-around py-5 md:flex-row-reverse">
           <img
             src="../../public/good_effect_brains.png"
             alt="brain"
             className="h-auto w-52"
           />
-          <article className="font-MICRO text-stone-200">
-            <h1 className="py-5 text-5xl">How good to our brains?</h1>
-            <ol className="text-lg w-[50vw] font-PIXELIFY">
+          <article className="pt-5 font-MICRO text-stone-200 md:p-0">
+            <h1 className="py-5 text-3xl md:text-5xl">
+              How good to our brains?
+            </h1>
+            <ol className="text-base md:text-lg md:w-[50vw] font-PIXELIFY px-3 md:p-0">
               <li>
                 Enhances Strategic Thinking:
                 <p>
