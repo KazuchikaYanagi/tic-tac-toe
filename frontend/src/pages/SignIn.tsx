@@ -77,7 +77,7 @@ const SignIn = () => {
           </div>
         )}
 
-        <article className="pb-3 text-3xl text-center font-MICRO">
+        <article className="pb-3 text-xl text-center md:text-3xl font-MICRO">
           {frag ? "Have an account?" : "Don't have any account?"}
           <span
             onClick={fragHandle}

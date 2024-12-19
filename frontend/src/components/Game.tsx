@@ -140,7 +140,7 @@ const Game: React.FC<GameProps> = ({ userId, username, roomId, setRoomId }) => {
       {winner ? (
         <h2 className="mt-10 text-4xl font-MICRO">{winner}</h2>
       ) : isGameStarted ? (
-        <h2 className="mt-10 text-5xl font-MICRO">
+        <h2 className="hidden mt-10 text-3xl md:text-5xl font-MICRO md:block">
           Current Player:
           <span
             className={`${
@@ -152,14 +152,14 @@ const Game: React.FC<GameProps> = ({ userId, username, roomId, setRoomId }) => {
           {/* {playerSymbol === currentPlayer ? " (Your Turn)" : ""} */}
         </h2>
       ) : null}
-      <div className="grid items-baseline grid-cols-3">
-        <div>
+      <div className="grid grid-cols-2 grid-rows-4 md:items-baseline md:grid-cols-7 md:grid-rows-1 md:mt-20">
+        <div className="flex flex-col items-center justify-start md:col-span-2">
           <h2
             className={`font-MICRO m-auto ${
               playerSymbol === "X" ? "bg-red-600" : "bg-blue-600"
             } ${
               playerSymbol === currentPlayer
-                ? "text-5xl w-40"
+                ? "text-3xl w-28 md:text-5xl md:w-40"
                 : "text-xl text-stone-500 brightness-50 w-24"
             }`}
           >
@@ -167,7 +167,7 @@ const Game: React.FC<GameProps> = ({ userId, username, roomId, setRoomId }) => {
           </h2>
           <p>
             {playerSymbol === currentPlayer ? (
-              <span className="block text-5xl text-green-600 font-MICRO">
+              <span className="block text-3xl text-green-600 md:text-5xl font-MICRO">
                 Your Turn
               </span>
             ) : (
@@ -176,7 +176,7 @@ const Game: React.FC<GameProps> = ({ userId, username, roomId, setRoomId }) => {
           </p>
         </div>
 
-        <div className="grid justify-center grid-cols-3 gap-2 mt-20 bg-green-600 w-[312px] mx-auto shadow-green-600">
+        <div className="grid order-last col-span-2 row-span-3 m-auto mt-10 md:col-span-3 md:order-none justify-center grid-cols-3 gap-2 bg-green-600 w-[312px] mx-auto shadow-green-600">
           {board.map((cell, index) => (
             <div
               key={index}
@@ -189,13 +189,14 @@ const Game: React.FC<GameProps> = ({ userId, username, roomId, setRoomId }) => {
             </div>
           ))}
         </div>
-        <div>
+
+        <div className="flex flex-col items-center justify-start md:col-span-2">
           <h2
             className={`font-MICRO m-auto ${
               playerSymbol !== "X" ? "bg-red-600" : "bg-blue-600"
             } ${
               playerSymbol !== currentPlayer
-                ? "text-5xl w-40"
+                ? "text-3xl w-28 md:text-5xl md:w-40"
                 : "text-xl text-stone-500 brightness-50 w-24"
             }`}
           >
@@ -203,7 +204,7 @@ const Game: React.FC<GameProps> = ({ userId, username, roomId, setRoomId }) => {
           </h2>
           <p>
             {playerSymbol !== currentPlayer ? (
-              <span className="block text-5xl text-green-600 font-MICRO">
+              <span className="block text-3xl text-green-600 md:text-5xl font-MICRO">
                 Your Turn
               </span>
             ) : (
