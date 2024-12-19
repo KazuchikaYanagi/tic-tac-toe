@@ -30,6 +30,7 @@ app.use((0, cookie_session_1.default)({
     ],
     maxAge: 24 * 60 * 60 * 1000,
     httpOnly: true,
+    secure: true,
     sameSite: "lax",
 }));
 // Router
