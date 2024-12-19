@@ -27,6 +27,7 @@ const Play: React.FC = () => {
       const res = await fetch(
         `https://tic-tac-toe-two-phi-22.vercel.app/api/users/play`,
         {
+          method: "GET",
           credentials: "include",
         }
       );
