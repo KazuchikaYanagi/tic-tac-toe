@@ -1,8 +1,6 @@
-// frontend/src/pages/Play.tsx
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Game from "../components/Game";
-// import Button from "../components/Button";
 
 interface UserData {
   _id: string;
@@ -17,7 +15,7 @@ const Play: React.FC = () => {
   const [roomId, setRoomId] = useState<string>("");
 
   const logOut = async (): Promise<void> => {
-    await fetch(`http://localhost:3010/api/users/logout`, {
+    await fetch(`https://tic-tac-toe-two-phi-22.vercel.app/api/users/logout`, {
       method: "GET",
       credentials: "include",
     });
@@ -26,9 +24,12 @@ const Play: React.FC = () => {
 
   const loadProfile = async (): Promise<void> => {
     try {
-      const res = await fetch(`http://localhost:3010/api/users/play`, {
-        credentials: "include",
-      });
+      const res = await fetch(
+        `https://tic-tac-toe-two-phi-22.vercel.app/api/users/play`,
+        {
+          credentials: "include",
+        }
+      );
 
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
@@ -76,8 +77,6 @@ const Play: React.FC = () => {
           </button>
         </div>
       )}
-
-      {/* <Button onclick={logOut}>Log Out</Button> */}
 
       <div className="pt-20 text-center ">
         <span className="pr-3 text-3xl font-MICRO">Room ID:</span>
