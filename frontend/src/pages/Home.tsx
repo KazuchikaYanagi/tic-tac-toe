@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
+import heroImage from "../../public/tic-tac-toe_lg-no_background.png";
+import ticTacToeImage from "../../public/tic-tac-toe_no-background.png";
+import goodEffectBrainImage from "../../public/good_effect_brains.png";
 
 const Home = () => {
   return (
     <>
       <div className="flex flex-col items-center h-screen text-center bg-red-900 justify-evenly bg-gradient-to-t from-blue-900">
-        <img
-          src="../../public/tic-tac-toe_lg-no_background.png"
-          alt="logo"
-          className="w-60 md:w-80"
-        />
+        <img src={heroImage} alt="logo" className="w-60 md:w-80" />
         <Link to="/signIn">
           <Button>Login</Button>
         </Link>
@@ -17,11 +16,7 @@ const Home = () => {
 
       <section className="w-full h-full p-8 bg-stone-800" id="about">
         <div className="flex flex-col items-center justify-around pt-5 md:flex-row pb-14">
-          <img
-            src="../../public/tic-tac-toe_no-background.png"
-            alt="tic-tac-toe"
-            className="w-52"
-          />
+          <img src={ticTacToeImage} alt="tic-tac-toe" className="w-52" />
           <article className="md:w-1/2 font-MICRO text-stone-200">
             <h1 className="py-5 text-3xl md:text-5xl">
               How to play tic-tac-toe?
@@ -36,11 +31,7 @@ const Home = () => {
         </div>
 
         <div className="flex flex-col items-center justify-around py-5 md:flex-row-reverse">
-          <img
-            src="../../public/good_effect_brains.png"
-            alt="brain"
-            className="h-auto w-52"
-          />
+          <img src={goodEffectBrainImage} alt="brain" className="h-auto w-52" />
           <article className="pt-5 font-MICRO text-stone-200 md:p-0">
             <h1 className="py-5 text-3xl md:text-5xl">
               How good to our brains?
