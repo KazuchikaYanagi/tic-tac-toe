@@ -6,12 +6,12 @@ interface FormProps {
 const Form: React.FC<FormProps> = ({ onSubmit, frag, errorMessage }) => {
   return (
     <div className="px-8">
-      <h2 className="py-8 text-5xl font-semibold font-MICRO">
+      <h2 className="py-8 text-3xl font-semibold md:text-5xl font-MICRO">
         {frag ? "Sign Up" : "Log In"}
       </h2>
 
       <form action="" className="w-full" onSubmit={onSubmit}>
-        <label htmlFor="username" className="text-3xl font-MICRO">
+        <label htmlFor="username" className="text-xl md:text-3xl font-MICRO">
           Username
         </label>
         <input
@@ -28,7 +28,7 @@ const Form: React.FC<FormProps> = ({ onSubmit, frag, errorMessage }) => {
               : ""
           } block w-[90%] border-2 bg-stone-700 border-none outline-none p-1 mb-8 font-PIXELIFY`}
         />
-        <label htmlFor="password" className="text-3xl font-MICRO">
+        <label htmlFor="password" className="text-xl md:text-3xl font-MICRO">
           Password
         </label>
         <input
@@ -44,7 +44,7 @@ const Form: React.FC<FormProps> = ({ onSubmit, frag, errorMessage }) => {
 
         <button
           type="submit"
-          className="p-2 px-4 text-2xl bg-blue-700 text-stone-200 font-MICRO"
+          className="p-1 px-2 text-lg bg-blue-700 md:p-2 md:px-4 md:text-2xl text-stone-200 font-MICRO"
         >
           {frag ? "Sign Up" : "Log In"}
         </button>

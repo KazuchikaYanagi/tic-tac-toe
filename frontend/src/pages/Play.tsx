@@ -47,12 +47,14 @@ const Play: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen py-24 text-stone-200 bg-stone-800">
-      {user && (
-        <div className="flex justify-around">
+    <div className="min-h-screen text-stone-200 bg-stone-800">
+      {user && roomId ? (
+        <div></div>
+      ) : (
+        <div className="flex justify-around pt-24 mb-10">
           <div className="flex items-center justify-center gap-4 mt-1 text-xl font-MICRO">
-            <h1 className="mr-5 text-3xl">
-              <span className="uppercase">{user.username}</span>'s Stats
+            <h1 className="md:mr-5 md:text-3xl">
+              <span className="uppercase">{user?.username}</span>'s Stats
             </h1>
             <table className="border border-spacing-2">
               <tr className="border border-separate">
@@ -60,15 +62,15 @@ const Play: React.FC = () => {
                 <th className="p-2 text-center border-4">wins</th>
               </tr>
               <tr className="border">
-                <td className="p-2 text-center border-4">{user.matches}</td>
-                <td className="p-2 text-center border-4">{user.win}</td>
+                <td className="p-2 text-center border-4">{user?.matches}</td>
+                <td className="p-2 text-center border-4">{user?.win}</td>
               </tr>
             </table>
           </div>
 
           <button
             onClick={logOut}
-            className="text-3xl font-MICRO text-stone-500 hover:text-stone-400"
+            className="text-base md:text-3xl font-MICRO text-stone-500 hover:text-stone-400"
           >
             Log out
           </button>
@@ -77,13 +79,13 @@ const Play: React.FC = () => {
 
       {/* <Button onclick={logOut}>Log Out</Button> */}
 
-      <div className="mt-5 text-center">
-        {/* <h2>Enter Room ID to Start the Game</h2> */}
+      <div className="pt-20 text-center ">
+        <span className="pr-3 text-3xl font-MICRO">Room ID:</span>
         <input
           type="text"
           value={roomId}
           onChange={(e) => setRoomId(e.target.value)}
-          className="px-2 py-1 border-none outline-none mt-14 font-PIXELIFY bg-stone-600 text-stone-200"
+          className="px-2 py-1 border-none outline-none font-PIXELIFY bg-stone-600 text-stone-200"
           placeholder="Enter Room ID"
         />
       </div>
