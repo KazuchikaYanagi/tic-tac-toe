@@ -11,7 +11,9 @@ const Ranking: React.FC = () => {
   const [users, setUsers] = useState<UserRank[]>([]);
 
   const loadRanking = async () => {
-    const res = await fetch("http://localhost:3010/api/users/ranking");
+    const res = await fetch(
+      "https://tic-tac-toe-two-phi-22.vercel.app/api/users/ranking"
+    );
     const data = await res.json();
     setUsers(data);
   };

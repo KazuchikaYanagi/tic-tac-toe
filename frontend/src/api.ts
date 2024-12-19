@@ -1,8 +1,10 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:5000/api" });
+const API = axios.create({
+  baseURL: "https://tic-tac-toe-two-phi-22.vercel.app/api",
+});
 
-// リクエストごとにトークンをヘッダーに追加
+// token are added every request
 API.interceptors.request.use((req: any) => {
   const token = localStorage.getItem("token");
   if (token) {
@@ -11,13 +13,13 @@ API.interceptors.request.use((req: any) => {
   return req;
 });
 
-// サインアップ
+// sign up
 export const signup = (formData: { username: string; password: string }) =>
   API.post("/users/signup", formData);
 
-// ログイン
+// login
 export const login = (formData: { username: string; password: string }) =>
   API.post("/users/login", formData);
 
-// ログアウト
+// logout
 export const logout = () => API.post("/users/logout");
