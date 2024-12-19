@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import trophy from "../../public/finalist-no_background.png";
 
 interface UserRank {
   username: string;
@@ -39,7 +40,7 @@ const Ranking: React.FC = () => {
           >
             {idx === 0 && (
               <img
-                src="../../public/finalist-no_background.png"
+                src={trophy}
                 alt="trophy"
                 className="inline-block h-auto w-14"
               />
