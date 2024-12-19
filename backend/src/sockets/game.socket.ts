@@ -14,7 +14,7 @@ const rooms: { [key: string]: Player[] } = {};
 export const setupGameSocket = (httpServer: HttpServer) => {
   const io = new Server(httpServer, {
     cors: {
-      origin: "http://localhost:5173",
+      origin: "https://tic-tac-toe-game-eta-gray.vercel.app",
       methods: ["GET", "POST"],
       credentials: true,
     },
