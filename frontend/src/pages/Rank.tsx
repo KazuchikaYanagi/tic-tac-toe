@@ -1,4 +1,3 @@
-// frontend/src/components/Ranking.tsx
 import React, { useEffect, useState } from "react";
 
 interface UserRank {
@@ -10,12 +9,10 @@ interface UserRank {
 
 const Ranking: React.FC = () => {
   const [users, setUsers] = useState<UserRank[]>([]);
-  const [winRates, setWinRates] = useState<UserRank[]>([]);
 
   const loadRanking = async () => {
     const res = await fetch("http://localhost:3010/api/users/ranking");
     const data = await res.json();
-    console.log(data);
     setUsers(data);
   };
 
