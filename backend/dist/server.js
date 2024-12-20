@@ -16,7 +16,7 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 // Middleware
 app.use((0, cors_1.default)({
-    origin: `https://tic-tac-toe-game-eta-gray.vercel.app`,
+    origin: `https://tic-tac-toe-chi-pink.vercel.app`,
     credentials: true,
 }));
 app.use(express_1.default.json());
@@ -28,8 +28,8 @@ app.use((0, cookie_session_1.default)({
         process.env.COOKIE_ENCRYPT_KEY || "default_encrypt_key",
     ],
     maxAge: 24 * 60 * 60 * 1000,
-    httpOnly: true,
-    secure: true,
+    // httpOnly: true,
+    // secure: true,
 }));
 // Router
 app.use("/api/users", user_routes_1.default);
