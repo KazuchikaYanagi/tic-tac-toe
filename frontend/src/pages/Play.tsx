@@ -15,7 +15,7 @@ const Play: React.FC = () => {
   const [roomId, setRoomId] = useState<string>("");
 
   const logOut = async (): Promise<void> => {
-    await fetch(`https://tic-tac-toe-gnyu.onrender.com/api/users/logout`, {
+    await fetch(`https://tic-tac-toe-7u0u.onrender.com/api/users/logout`, {
       method: "GET",
       credentials: "include",
     });
@@ -25,7 +25,7 @@ const Play: React.FC = () => {
   const loadProfile = async (): Promise<void> => {
     try {
       const res = await fetch(
-        `https://tic-tac-toe-gnyu.onrender.com/api/users/play`,
+        `https://tic-tac-toe-7u0u.onrender.com/api/users/play`,
         {
           credentials: "include",
         }

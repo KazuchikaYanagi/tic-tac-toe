@@ -12,7 +12,7 @@ const Ranking: React.FC = () => {
 
   const loadRanking = async () => {
     const res = await fetch(
-      "https://tic-tac-toe-gnyu.onrender.com/api/users/ranking"
+      "https://tic-tac-toe-7u0u.onrender.com/api/users/ranking"
     );
     const data = await res.json();
     setUsers(data);
