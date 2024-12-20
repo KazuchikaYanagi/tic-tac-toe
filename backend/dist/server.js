@@ -18,10 +18,7 @@ const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
     origin: [
         `https://tic-tac-toe-chi-pink.vercel.app`,
-        "https://tic-tac-toe-chi-pink.vercel.app/",
-        "https://tic-tac-toe-7u0u.onrender.com/api/users/play",
         "https://tic-tac-toe-7u0u.onrender.com",
-        "https://tic-tac-toe-7u0u.onrender.com/",
     ],
     credentials: true,
 }));
@@ -36,6 +33,7 @@ app.use((0, cookie_session_1.default)({
     maxAge: 24 * 60 * 60 * 1000,
     httpOnly: true,
     secure: true,
+    sameSite: "lax",
 }));
 // Router
 app.use("/api/users", user_routes_1.default);
