@@ -19,6 +19,7 @@ app.use((0, cors_1.default)({
     origin: [
         `https://tic-tac-toe-chi-pink.vercel.app`,
         "https://tic-tac-toe-chi-pink.vercel.app/",
+        "https://tic-tac-toe-7u0u.onrender.com/api/users/play",
         "https://tic-tac-toe-7u0u.onrender.com",
         "https://tic-tac-toe-7u0u.onrender.com/",
     ],
