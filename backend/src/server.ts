@@ -17,7 +17,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      `https://tic-tac-toe-chi-pink.vercel.app`,
+      "https://tic-tac-toe-chi-pink.vercel.app",
       "https://tic-tac-toe-7u0u.onrender.com",
     ],
     credentials: true,
@@ -35,7 +35,7 @@ app.use(
     maxAge: 24 * 60 * 60 * 1000,
     httpOnly: true,
     secure: true,
-    sameSite: "lax",
+    sameSite: "none",
   })
 );
 
