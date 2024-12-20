@@ -14,7 +14,7 @@ const SignIn = () => {
     setErrorMessage("");
     const formData = new FormData(e.currentTarget);
     const res = await fetch(
-      `https://tic-tac-toe-gnyu.onrender.com/api/users/login`,
+      `https://tic-tac-toe-7u0u.onrender.com/api/users/login`,
       {
         method: "POST",
         headers: {
@@ -45,7 +45,7 @@ const SignIn = () => {
     const formData = new FormData(e.currentTarget);
 
     const res = await fetch(
-      `https://tic-tac-toe-gnyu.onrender.com/api/users/register`,
+      `https://tic-tac-toe-7u0u.onrender.com/api/users/register`,
       {
         method: "POST",
         headers: {
