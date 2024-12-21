@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://tic-tac-toe-two-phi-22.vercel.app/api",
+  baseURL: "https://tic-tac-toe-7u0u.onrender.com/api",
 });
 
 // token are added every request
