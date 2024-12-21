@@ -16,7 +16,7 @@ const rooms = {};
 const setupGameSocket = (httpServer) => {
     const io = new socket_io_1.Server(httpServer, {
         cors: {
-            origin: "https://tic-tac-toe-chi-pink.vercel.app",
+            origin: "https://tic-tac-toe-7u0u.onrender.com",
             methods: ["GET", "POST"],
             credentials: true,
         },
