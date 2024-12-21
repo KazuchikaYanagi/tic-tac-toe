@@ -5,7 +5,7 @@ import { checkAuth } from "../middleware/auth";
 const userRouter = Router();
 
 userRouter.get("/play", checkAuth, userController.userProfile);
-userRouter.post("/login", checkAuth, userController.loginUser);
+userRouter.post("/login", userController.loginUser);
 userRouter.get("/", checkAuth, userController.getAllUsers);
 userRouter.get("/ranking", userController.getTopThreeUsers);
 userRouter.get("/logout", checkAuth, userController.logoutUser);
