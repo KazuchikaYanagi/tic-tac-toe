@@ -26,8 +26,8 @@ app.use(
   cookieSession({
     name: "session",
     keys: [
-      process.env.COOKIE_SIGN_KEY || "default_sign_key",
-      process.env.COOKIE_ENCRYPT_KEY || "default_encrypt_key",
+      process.env.COOKIE_SIGN_KEY ?? "default_sign_key",
+      process.env.COOKIE_ENCRYPT_KEY ?? "default_encrypt_key",
     ],
     maxAge: 24 * 60 * 60 * 1000,
     sameSite: "strict",
