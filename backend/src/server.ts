@@ -32,7 +32,7 @@ app.use(
     maxAge: 24 * 60 * 60 * 1000,
     sameSite: "strict",
     httpOnly: true,
-    secure: process.env.NODE_ENV === "HTTPS",
+    secure: process.env.NODE_ENV === "production",
   })
 );
 
