@@ -30,9 +30,8 @@ app.use(
       process.env.COOKIE_ENCRYPT_KEY || "default_encrypt_key",
     ],
     maxAge: 24 * 60 * 60 * 1000,
-    // domain: "https://tic-tac-toe-chi-pink.vercel.app",
-    // httpOnly: true,
-    // secure: true,
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "HTTPS",
   })
 );
 
