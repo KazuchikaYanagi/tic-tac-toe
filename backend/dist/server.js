@@ -2,6 +2,7 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
@@ -24,8 +25,8 @@ app.use(express_1.default.urlencoded({ extended: true }));
 app.use((0, cookie_session_1.default)({
     name: "session",
     keys: [
-        process.env.COOKIE_SIGN_KEY || "default_sign_key",
-        process.env.COOKIE_ENCRYPT_KEY || "default_encrypt_key",
+        (_a = process.env.COOKIE_SIGN_KEY) !== null && _a !== void 0 ? _a : "default_sign_key",
+        (_b = process.env.COOKIE_ENCRYPT_KEY) !== null && _b !== void 0 ? _b : "default_encrypt_key",
     ],
     maxAge: 24 * 60 * 60 * 1000,
     sameSite: "strict",
