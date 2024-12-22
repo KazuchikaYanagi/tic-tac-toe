@@ -16,7 +16,10 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: "https://tic-tac-9cq0lzgmd-kazuchikayanagis-projects.vercel.app",
+    origin: [
+      "https://tic-tac-toe-chi-pink.vercel.app",
+      "http://localhost:3000",
+    ],
     credentials: true,
   })
 );
