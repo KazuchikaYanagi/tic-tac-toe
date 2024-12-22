@@ -6,12 +6,12 @@ const userRouter = Router();
 
 userRouter.get("/play", checkAuth, userController.userProfile);
 userRouter.get("/", checkAuth, userController.getAllUsers);
-userRouter.get("/ranking", userController.getTopThreeUsers);
 userRouter.get("/logout", checkAuth, userController.logoutUser);
+userRouter.get("/ranking", userController.getTopThreeUsers);
 userRouter.get("/:id", checkAuth, userController.getUserById);
 
-userRouter.post("/login", userController.loginUser);
 userRouter.post("/register", userController.registerUser);
+userRouter.post("/login", userController.loginUser);
 
 userRouter.put("/:id", checkAuth, userController.updateUser);
 userRouter.delete("/:id", checkAuth, userController.deleteUserById);
