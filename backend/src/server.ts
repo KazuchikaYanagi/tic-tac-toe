@@ -33,9 +33,9 @@ app.use(
       process.env.COOKIE_ENCRYPT_KEY || "default_encrypt_key",
     ],
     maxAge: 24 * 60 * 60 * 1000,
-    domain: "https://tic-tac-toe-7u0u.onrender.com",
+    domain: "https://tic-tac-toe-chi-pink.vercel.app",
     // httpOnly: true,
-    secure: true,
+    // secure: true,
     // sameSite: "none",
   })
 );
