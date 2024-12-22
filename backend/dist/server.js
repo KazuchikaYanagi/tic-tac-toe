@@ -16,10 +16,7 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 // Middleware
 app.use((0, cors_1.default)({
-    origin: [
-        "https://tic-tac-toe-chi-pink.vercel.app",
-        "https://tic-tac-toe-7u0u.onrender.com",
-    ],
+    origin: "https://tic-tac-toe-chi-pink.vercel.app",
     credentials: true,
 }));
 app.use(express_1.default.json());

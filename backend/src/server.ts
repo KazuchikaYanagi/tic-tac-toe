@@ -16,10 +16,7 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: [
-      "https://tic-tac-toe-chi-pink.vercel.app",
-      "https://tic-tac-toe-7u0u.onrender.com",
-    ],
+    origin: "https://tic-tac-toe-chi-pink.vercel.app",
     credentials: true,
   })
 );
