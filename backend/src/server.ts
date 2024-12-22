@@ -16,7 +16,7 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: `https://tic-tac-toe-chi-pink.vercel.app:${process.env.PORT}`,
+    origin: "https://tic-tac-toe-chi-pink.vercel.app",
     credentials: true,
   })
 );
@@ -33,7 +33,6 @@ app.use(
     // domain: "https://tic-tac-toe-chi-pink.vercel.app",
     // httpOnly: true,
     // secure: true,
-    // sameSite: "none",
   })
 );
 
