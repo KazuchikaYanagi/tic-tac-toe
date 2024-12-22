@@ -38,6 +38,7 @@ const Play: React.FC = () => {
       }
 
       const data = await res.json();
+      console.log(data);
       setUser(data);
     } catch (error) {
       console.error("Error loading profile:", error);
