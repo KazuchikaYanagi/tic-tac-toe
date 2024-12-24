@@ -37,14 +37,14 @@ const Play: React.FC = () => {
           credentials: "include", // include cookies
         }
       );
+      const data = await res.json();
+      console.log(data);
 
       if (!res.ok) {
         console.log(res);
         throw new Error(`HTTP error! status: ${res.status}`);
       }
 
-      const data = await res.json();
-      console.log(data);
       setUser(data);
     } catch (error) {
       console.log(error);
