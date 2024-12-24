@@ -84,7 +84,7 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         }
         req.session.isAuthenticated = true;
         req.session.userId = user.id.toString();
-        console.log("Login User:", req.session);
+        console.log("Session after login:", req.session);
         res.json({ message: "Login successful" });
     }
     catch (error) {
@@ -101,7 +101,6 @@ const userProfile = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
             return;
         }
         const user = yield user_model_1.User.findById(userId).select("-password");
-        // const user = await User.findById(userId);
         if (!user) {
             console.log("user check:", user);
             res.status(404).json({ message: "User not found" });

@@ -104,7 +104,7 @@ const loginUser = async (
     (req as AuthenticatedRequest).session!.isAuthenticated = true;
     (req as AuthenticatedRequest).session!.userId = user.id.toString();
 
-    console.log("Login User:", req.session);
+    console.log("Session after login:", req.session);
     res.json({ message: "Login successful" });
   } catch (error) {
     console.error("Login User Error:", error);
@@ -125,7 +125,6 @@ const userProfile = async (
     }
 
     const user = await User.findById(userId).select("-password");
-    // const user = await User.findById(userId);
     if (!user) {
       console.log("user check:", user);
       res.status(404).json({ message: "User not found" });
