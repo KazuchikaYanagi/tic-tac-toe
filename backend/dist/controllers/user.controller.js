@@ -92,9 +92,8 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 const userProfile = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    var _a;
     try {
-        const userId = (_a = req.session) === null || _a === void 0 ? void 0 : _a.userId;
+        const { userId } = req.session;
         if (!userId) {
             res.status(401).json({ message: "Unauthorized" });
             return;

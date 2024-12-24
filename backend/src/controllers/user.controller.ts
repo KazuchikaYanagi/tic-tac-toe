@@ -46,7 +46,6 @@ const registerUser = async (
 ): Promise<void> => {
   try {
     const { username, password } = req.body;
-
     if (!username || !password) {
       res.status(400).json({ message: "Username and Password are required" });
       return;
@@ -90,6 +89,7 @@ const loginUser = async (
     }
 
     const user = await User.findOne({ username });
+
     if (!user) {
       res.status(404).json({ message: "User not found" });
       return;
@@ -116,7 +116,7 @@ const userProfile = async (
   res: Response
 ): Promise<void> => {
   try {
-    const userId = req.session?.userId;
+    const { userId } = req.session!;
     if (!userId) {
       res.status(401).json({ message: "Unauthorized" });
       return;
