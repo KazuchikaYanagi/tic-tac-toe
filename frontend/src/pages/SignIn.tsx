@@ -27,8 +27,6 @@ const SignIn = () => {
         }),
       }
     );
-    console.log(formData.get("username"));
-    console.log(res);
     const data = await res.json();
     if (res.ok) {
       navigate("/play");

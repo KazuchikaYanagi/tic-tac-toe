@@ -27,8 +27,8 @@ const Play: React.FC = () => {
       const res = await fetch(
         `https://tic-tac-toe-7u0u.onrender.com/api/users/play`,
         {
-          method: "GET",
-          credentials: "include",
+          // method: "GET",
+          credentials: "include", // include cookies
         }
       );
 
@@ -41,6 +41,7 @@ const Play: React.FC = () => {
       console.log(data);
       setUser(data);
     } catch (error) {
+      console.log(error);
       console.error("Error loading profile:", error);
       navigate("/");
     }
