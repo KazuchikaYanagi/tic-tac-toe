@@ -122,8 +122,8 @@ const userProfile = async (
       return;
     }
 
-    // const user = await User.findById(userId).select("-password");
-    const user = await User.findById(userId);
+    const user = await User.findById(userId).select("-password");
+    // const user = await User.findById(userId);
     if (!user) {
       res.status(404).json({ message: "User not found" });
       return;
