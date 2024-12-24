@@ -101,6 +101,9 @@ const loginUser = async (
       return;
     }
 
+    if (!req.session) {
+      req.session = {};
+    }
     (req as AuthenticatedRequest).session!.isAuthenticated = true;
     (req as AuthenticatedRequest).session!.userId = user.id.toString();
 
