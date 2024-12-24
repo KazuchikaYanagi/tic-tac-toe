@@ -30,7 +30,8 @@ const SignIn = () => {
     const data = await res.json();
     console.log(data);
     if (res.ok) {
-      return navigate("/play");
+      navigate("/play");
+      // return navigate("/play");
     } else {
       setErrorMessage(data.message || "Failed to log in");
       console.error("Error:", data.message);
