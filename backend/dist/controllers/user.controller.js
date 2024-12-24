@@ -98,7 +98,8 @@ const userProfile = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
             res.status(401).json({ message: "Unauthorized" });
             return;
         }
-        const user = yield user_model_1.User.findById(userId).select("-password");
+        // const user = await User.findById(userId).select("-password");
+        const user = yield user_model_1.User.findById(userId);
         if (!user) {
             res.status(404).json({ message: "User not found" });
             return;
