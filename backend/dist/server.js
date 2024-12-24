@@ -17,7 +17,7 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 // Middleware
 app.use((0, cors_1.default)({
-    origin: "https://tic-tac-l1frhxcq9-kazuchikayanagis-projects.vercel.app",
+    origin: "https://tic-tac-toe-chi-pink.vercel.app",
     credentials: true,
 }));
 app.use(express_1.default.json());
