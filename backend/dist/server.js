@@ -31,7 +31,7 @@ app.use((0, cookie_session_1.default)({
     maxAge: 24 * 60 * 60 * 1000,
     sameSite: "none",
     httpOnly: true,
-    secure: true,
+    secure: process.env.NODE_ENV === "production",
 }));
 // Router
 app.use("/api/users", user_routes_1.default);
