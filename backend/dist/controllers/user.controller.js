@@ -93,16 +93,16 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 const userProfile = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    var _a;
     try {
-        const { userId } = req.session;
+        console.log("Session Data:", req.session);
+        const userId = (_a = req.session) === null || _a === void 0 ? void 0 : _a.userId;
         if (!userId) {
-            console.log("userId check:", userId);
             res.status(401).json({ message: "Unauthorized" });
             return;
         }
         const user = yield user_model_1.User.findById(userId).select("-password");
         if (!user) {
-            console.log("user check:", user);
             res.status(404).json({ message: "User not found" });
             return;
         }

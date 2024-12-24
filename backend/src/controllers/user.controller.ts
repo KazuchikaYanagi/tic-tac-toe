@@ -117,16 +117,15 @@ const userProfile = async (
   res: Response
 ): Promise<void> => {
   try {
-    const { userId } = (req as AuthenticatedRequest).session!;
+    console.log("Session Data:", req.session);
+    const userId = req.session?.userId;
     if (!userId) {
-      console.log("userId check:", userId);
       res.status(401).json({ message: "Unauthorized" });
       return;
     }
 
     const user = await User.findById(userId).select("-password");
     if (!user) {
-      console.log("user check:", user);
       res.status(404).json({ message: "User not found" });
       return;
     }
