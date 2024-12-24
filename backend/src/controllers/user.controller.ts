@@ -104,6 +104,7 @@ const loginUser = async (
     (req as AuthenticatedRequest).session!.isAuthenticated = true;
     (req as AuthenticatedRequest).session!.userId = user.id.toString();
 
+    console.log("Login User:", req.session);
     res.json({ message: "Login successful" });
   } catch (error) {
     console.error("Login User Error:", error);
@@ -116,9 +117,9 @@ const userProfile = async (
   res: Response
 ): Promise<void> => {
   try {
-    const { userId } = req.session!;
+    const { userId } = (req as AuthenticatedRequest).session!;
     if (!userId) {
-      console.log(userId);
+      console.log("userId check:", userId);
       res.status(401).json({ message: "Unauthorized" });
       return;
     }
@@ -126,14 +127,14 @@ const userProfile = async (
     const user = await User.findById(userId).select("-password");
     // const user = await User.findById(userId);
     if (!user) {
-      console.log(user);
+      console.log("user check:", user);
       res.status(404).json({ message: "User not found" });
       return;
     }
 
     res.json(user);
   } catch (error) {
-    console.log(error);
+    console.log("userProfile check:", error);
     console.error("User Profile Error:", error);
     res.status(500).json({ message: "Server Error" });
   }
