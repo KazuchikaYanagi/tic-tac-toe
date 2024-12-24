@@ -16,10 +16,7 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: [
-      "https://tic-tac-toe-chi-pink.vercel.app",
-      "http://localhost:3000",
-    ],
+    origin: ["https://tic-tac-toe-chi-pink.vercel.app"],
     credentials: true,
   })
 );
@@ -35,7 +32,7 @@ app.use(
     maxAge: 24 * 60 * 60 * 1000,
     sameSite: "none",
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: true,
   })
 );
 
