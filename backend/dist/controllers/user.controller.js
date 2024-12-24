@@ -95,18 +95,21 @@ const userProfile = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     try {
         const { userId } = req.session;
         if (!userId) {
+            console.log(userId);
             res.status(401).json({ message: "Unauthorized" });
             return;
         }
         const user = yield user_model_1.User.findById(userId).select("-password");
         // const user = await User.findById(userId);
         if (!user) {
+            console.log(user);
             res.status(404).json({ message: "User not found" });
             return;
         }
         res.json(user);
     }
     catch (error) {
+        console.log(error);
         console.error("User Profile Error:", error);
         res.status(500).json({ message: "Server Error" });
     }
