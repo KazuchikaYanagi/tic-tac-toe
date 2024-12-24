@@ -17,6 +17,9 @@ const Play: React.FC = () => {
   const logOut = async (): Promise<void> => {
     await fetch(`https://tic-tac-toe-7u0u.onrender.com/api/users/logout`, {
       method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
       credentials: "include",
     });
     navigate("/signIn");
@@ -27,7 +30,10 @@ const Play: React.FC = () => {
       const res = await fetch(
         `https://tic-tac-toe-7u0u.onrender.com/api/users/play`,
         {
-          // method: "GET",
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
           credentials: "include", // include cookies
         }
       );
