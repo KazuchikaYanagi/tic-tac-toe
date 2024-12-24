@@ -13,6 +13,7 @@ export const checkAuth = (
   res: Response,
   next: NextFunction
 ) => {
+  console.log("Session:", req.session);
   if (req.session && req.session.isAuthenticated && req.session.userId) {
     next();
   } else {
