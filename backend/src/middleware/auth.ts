@@ -13,7 +13,11 @@ export const checkAuth = (
   res: Response,
   next: NextFunction
 ) => {
-  console.log("Session in checkAuth:", req.session);
+  if (!req.session || Object.keys(req.session).length === 0) {
+    console.error("Session is empty or undefined", req.session);
+    return res.status(401).json({ message: "Unauthorized: session is empty" });
+  }
+
   if (req.session && req.session.isAuthenticated && req.session.userId) {
     next();
   } else {
