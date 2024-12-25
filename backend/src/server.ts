@@ -17,6 +17,7 @@ const app = express();
 app.use(
   cors({
     origin: "https://tic-tac-toe-chi-pink.vercel.app",
+    methods: ["GET", "POST"],
     credentials: true,
   })
 );
