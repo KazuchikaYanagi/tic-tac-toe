@@ -31,7 +31,6 @@ const SignIn = () => {
     console.log(data);
     if (res.ok) {
       navigate("/play");
-      // return navigate("/play");
     } else {
       setErrorMessage(data.message || "Failed to log in");
       console.error("Error:", data.message);
