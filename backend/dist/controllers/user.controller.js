@@ -82,9 +82,9 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             res.status(403).json({ message: "Password is incorrect" });
             return;
         }
-        if (!req.session) {
-            req.session = {};
-        }
+        // if (!req.session) {
+        //   req.session = {};
+        // }
         req.session.isAuthenticated = true;
         req.session.userId = user.id.toString();
         console.log("Session after login:", req.session);
