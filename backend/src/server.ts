@@ -16,8 +16,11 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: "https://tic-tac-toe-chi-pink.vercel.app",
-    methods: ["GET", "POST"],
+    // origin: "https://tic-tac-toe-chi-pink.vercel.app",
+    // methods: ["GET", "POST"],
+    origin: "*",
+    methods: "*",
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
