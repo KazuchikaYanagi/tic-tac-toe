@@ -30,9 +30,9 @@ app.use((0, cookie_session_1.default)({
         (_b = process.env.COOKIE_ENCRYPT_KEY) !== null && _b !== void 0 ? _b : "default_encrypt_key",
     ],
     maxAge: 24 * 60 * 60 * 1000,
-    sameSite: "strict",
+    sameSite: "lax",
     httpOnly: true,
-    secure: true,
+    secure: false,
 }));
 // Router
 app.use("/api/users", user_routes_1.default);
