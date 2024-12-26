@@ -1,37 +1,35 @@
 import { useState } from "react";
 import Form from "../components/Form";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [frag, setFrag] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
 
   const loginForm = async (
     e: React.FormEvent<HTMLFormElement>
-  ): Promise<Response | undefined> => {
+  ): Promise<void> => {
     e.preventDefault();
     setErrorMessage("");
     const formData = new FormData(e.currentTarget);
-    const res = await fetch(
-      `https://tic-tac-toe-7u0u.onrender.com/api/users/login`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify({
-          username: formData.get("username"),
-          password: formData.get("password"),
-        }),
-        mode: "cors",
-      }
-    );
+    const res = await fetch(`http://localhost:3010/api/users/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        username: formData.get("username"),
+        password: formData.get("password"),
+      }),
+      mode: "cors",
+    });
     const data = await res.json();
     console.log(data);
     if (res.ok) {
-      return redirect("/play");
+      // return redirect("/play");
+      navigate("/play");
     } else {
       setErrorMessage(data.message || "Failed to log in");
       console.error("Error:", data.message);
@@ -45,20 +43,17 @@ const SignIn = () => {
     setErrorMessage("");
     const formData = new FormData(e.currentTarget);
 
-    const res = await fetch(
-      `https://tic-tac-toe-7u0u.onrender.com/api/users/register`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify({
-          username: formData.get("username"),
-          password: formData.get("password"),
-        }),
-      }
-    );
+    const res = await fetch(`http://localhost:3010/api/users/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        username: formData.get("username"),
+        password: formData.get("password"),
+      }),
+    });
     const data = await res.json();
     setErrorMessage(data.message);
     setFrag((prev) => !prev);
