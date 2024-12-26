@@ -15,7 +15,7 @@ const Play: React.FC = () => {
   const [roomId, setRoomId] = useState<string>("");
 
   const logOut = async (): Promise<void> => {
-    await fetch(`https://tic-tac-toe-7u0u.onrender.com/api/users/logout`, {
+    await fetch(`http://localhost:3010/api/users/logout`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -27,17 +27,13 @@ const Play: React.FC = () => {
 
   const loadProfile = async (): Promise<void> => {
     try {
-      const res = await fetch(
-        `https://tic-tac-toe-7u0u.onrender.com/api/users/play`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          mode: "cors",
-          credentials: "include", // include cookies
-        }
-      );
+      const res = await fetch(`http://localhost:3010/api/users/play`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include", // include cookies
+      });
       const data = await res.json();
       console.log(data);
 
