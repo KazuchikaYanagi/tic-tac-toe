@@ -18,7 +18,7 @@ const app = (0, express_1.default)();
 // Middleware
 app.use((0, cors_1.default)({
     origin: "https://tic-tac-toe-chi-pink.vercel.app",
-    methods: ["GET", "POST"],
+    // methods: ["GET", "POST"],
     credentials: true,
 }));
 app.use(express_1.default.json());
@@ -32,7 +32,7 @@ app.use((0, cookie_session_1.default)({
     maxAge: 24 * 60 * 60 * 1000,
     sameSite: "lax",
     httpOnly: true,
-    secure: false,
+    secure: true,
 }));
 // Router
 app.use("/api/users", user_routes_1.default);
