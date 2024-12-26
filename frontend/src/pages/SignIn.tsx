@@ -9,7 +9,7 @@ const SignIn = () => {
 
   const loginForm = async (
     e: React.FormEvent<HTMLFormElement>
-  ): Promise<void> => {
+  ): Promise<Response | undefined> => {
     e.preventDefault();
     setErrorMessage("");
     const formData = new FormData(e.currentTarget);
@@ -31,7 +31,7 @@ const SignIn = () => {
     const data = await res.json();
     console.log(data);
     if (res.ok) {
-      redirect("/play");
+      return redirect("/play");
     } else {
       setErrorMessage(data.message || "Failed to log in");
       console.error("Error:", data.message);
