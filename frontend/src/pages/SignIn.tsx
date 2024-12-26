@@ -7,7 +7,9 @@ const SignIn = () => {
   const [frag, setFrag] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
 
-  const loginForm = async (e: React.FormEvent<HTMLFormElement>) => {
+  const loginForm = async (
+    e: React.FormEvent<HTMLFormElement>
+  ): Promise<void> => {
     e.preventDefault();
     setErrorMessage("");
     const formData = new FormData(e.currentTarget);
@@ -29,7 +31,7 @@ const SignIn = () => {
     const data = await res.json();
     console.log(data);
     if (res.ok) {
-      return redirect("/play");
+      redirect("/play");
     } else {
       setErrorMessage(data.message || "Failed to log in");
       console.error("Error:", data.message);
