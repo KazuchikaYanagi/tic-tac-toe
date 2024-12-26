@@ -33,7 +33,7 @@ app.use(
     maxAge: 24 * 60 * 60 * 1000,
     sameSite: "lax",
     httpOnly: true,
-    secure: true,
+    secure: false,
     domain: "tic-tac-toe-chi-pink.vercel.app",
   })
 );
