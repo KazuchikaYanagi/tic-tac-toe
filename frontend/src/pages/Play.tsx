@@ -34,6 +34,7 @@ const Play: React.FC = () => {
           headers: {
             "Content-Type": "application/json",
           },
+          mode: "cors",
           credentials: "include", // include cookies
         }
       );
