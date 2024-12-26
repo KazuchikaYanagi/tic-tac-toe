@@ -109,7 +109,7 @@ const loginUser = async (
 
     console.log("Session after login:", req.session);
     res.json({ message: "Login successful" });
-    res.redirect("/play");
+    // res.redirect("/play");
   } catch (error) {
     console.error("Login User Error:", error);
     res.status(500).json({ message: "Server Error" });
