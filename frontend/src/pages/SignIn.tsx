@@ -13,18 +13,21 @@ const SignIn = () => {
     e.preventDefault();
     setErrorMessage("");
     const formData = new FormData(e.currentTarget);
-    const res = await fetch(`http://localhost:3010/api/users/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({
-        username: formData.get("username"),
-        password: formData.get("password"),
-      }),
-      mode: "cors",
-    });
+    const res = await fetch(
+      `https://tic-tac-toe-7u0u.onrender.com/api/users/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          username: formData.get("username"),
+          password: formData.get("password"),
+        }),
+        mode: "cors",
+      }
+    );
     const data = await res.json();
     console.log(data);
     if (res.ok) {
@@ -43,17 +46,20 @@ const SignIn = () => {
     setErrorMessage("");
     const formData = new FormData(e.currentTarget);
 
-    const res = await fetch(`http://localhost:3010/api/users/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({
-        username: formData.get("username"),
-        password: formData.get("password"),
-      }),
-    });
+    const res = await fetch(
+      `https://tic-tac-toe-7u0u.onrender.com/api/users/register`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          username: formData.get("username"),
+          password: formData.get("password"),
+        }),
+      }
+    );
     const data = await res.json();
     setErrorMessage(data.message);
     setFrag((prev) => !prev);
