@@ -17,7 +17,7 @@ const app = express();
 app.use(
   cors({
     origin: "https://tic-tac-toe-chi-pink.vercel.app",
-    methods: ["GET", "POST"],
+    // methods: ["GET", "POST"],
     credentials: true,
   })
 );
@@ -33,7 +33,7 @@ app.use(
     maxAge: 24 * 60 * 60 * 1000,
     sameSite: "lax",
     httpOnly: true,
-    secure: false,
+    secure: true,
   })
 );
 
