@@ -1,15 +1,13 @@
 import { useState } from "react";
 import Form from "../components/Form";
-import { useNavigate } from "react-router-dom";
+import { redirect } from "react-router-dom";
 
 const SignIn = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [frag, setFrag] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
 
-  const loginForm = async (
-    e: React.FormEvent<HTMLFormElement>
-  ): Promise<void> => {
+  const loginForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setErrorMessage("");
     const formData = new FormData(e.currentTarget);
@@ -31,7 +29,7 @@ const SignIn = () => {
     const data = await res.json();
     console.log(data);
     if (res.ok) {
-      navigate("/play");
+      return redirect("/play");
     } else {
       setErrorMessage(data.message || "Failed to log in");
       console.error("Error:", data.message);
