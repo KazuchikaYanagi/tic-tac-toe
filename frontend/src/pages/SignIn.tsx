@@ -25,6 +25,7 @@ const SignIn = () => {
           username: formData.get("username"),
           password: formData.get("password"),
         }),
+        mode: "cors",
       }
     );
     const data = await res.json();
