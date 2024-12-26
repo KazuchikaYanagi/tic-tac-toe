@@ -12,7 +12,7 @@ export const checkAuth = (
   req: AuthenticatedRequest,
   res: Response,
   next: NextFunction
-): void => {
+) => {
   // if (!req.session || Object.keys(req.session).length === 0) {
   //   console.error("Session is empty or undefined", req.session);
   //   return res.status(401).json({ message: "Unauthorized: session is empty" });
