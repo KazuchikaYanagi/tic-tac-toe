@@ -30,8 +30,8 @@ app.use((0, cookie_session_1.default)({
     ],
     maxAge: 24 * 60 * 60 * 1000,
     httpOnly: true,
-    secure: false,
-    sameSite: "lax",
+    secure: true,
+    sameSite: "none",
     domain: "https://tic-tac-toe-chi-pink.vercel.app",
 }));
 // Router
