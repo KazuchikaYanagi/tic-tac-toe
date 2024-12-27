@@ -32,7 +32,7 @@ app.use((0, cookie_session_1.default)({
     httpOnly: true,
     secure: false,
     sameSite: "lax",
-    domain: "tic-tac-toe-chi-pink.vercel.app",
+    domain: ".vercel.app",
 }));
 // Router
 app.use("/api/users", user_routes_1.default);
