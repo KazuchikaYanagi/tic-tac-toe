@@ -33,7 +33,7 @@ app.use(
     httpOnly: true,
     secure: false,
     sameSite: "lax",
-    domain: "tic-tac-toe-chi-pink.vercel.app",
+    domain: ".vercel.app",
   })
 );
 
