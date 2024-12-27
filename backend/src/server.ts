@@ -31,9 +31,10 @@ app.use(
       process.env.COOKIE_ENCRYPT_KEY ?? "default_encrypt_key",
     ],
     maxAge: 24 * 60 * 60 * 1000,
-    sameSite: "none",
     httpOnly: true,
     secure: true,
+    sameSite: "none",
+    domain: "tic-tac-toe-7u0u.onrender.com",
   })
 );
 
