@@ -32,8 +32,8 @@ app.use(
     maxAge: 24 * 60 * 60 * 1000,
     httpOnly: true,
     secure: true,
-    sameSite: "lax",
-    domain: "tic-tac-toe-7u0u.onrender.com",
+    sameSite: "none",
+    domain: "tic-tac-toe-chi-pink.vercel.app",
   })
 );
 

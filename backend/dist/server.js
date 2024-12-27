@@ -31,8 +31,8 @@ app.use((0, cookie_session_1.default)({
     maxAge: 24 * 60 * 60 * 1000,
     httpOnly: true,
     secure: true,
-    sameSite: "lax",
-    domain: "tic-tac-toe-7u0u.onrender.com",
+    sameSite: "none",
+    domain: "tic-tac-toe-chi-pink.vercel.app",
 }));
 // Router
 app.use("/api/users", user_routes_1.default);
