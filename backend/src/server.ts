@@ -34,7 +34,7 @@ app.use(
     httpOnly: true,
     secure: true,
     sameSite: "none",
-    secureProxy: true,
+    // secureProxy: true,
   })
 );
 
