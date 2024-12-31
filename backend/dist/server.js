@@ -19,10 +19,16 @@ const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
     origin: "https://tic-tac-toe-chi-pink.vercel.app",
     credentials: true,
+    allowedHeaders: [
+        "Content-Type",
+        "Authorization",
+        "Set-Cookie",
+        "Access-Control-Allow-Credentials",
+    ],
 }));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-app.set("trust proxy", true);
+app.set("trust proxy", 1);
 app.use((0, cookie_session_1.default)({
     name: "session",
     keys: [
@@ -32,8 +38,7 @@ app.use((0, cookie_session_1.default)({
     maxAge: 24 * 60 * 60 * 1000,
     httpOnly: true,
     secure: true,
-    sameSite: "lax",
-    // secureProxy: true,
+    sameSite: "none",
 }));
 // Router
 app.use("/api/users", user_routes_1.default);
