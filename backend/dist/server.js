@@ -33,6 +33,7 @@ app.use((0, cookie_session_1.default)({
     httpOnly: true,
     secure: true,
     sameSite: "none",
+    secureProxy: true,
 }));
 // Router
 app.use("/api/users", user_routes_1.default);
