@@ -28,7 +28,7 @@ const Play: React.FC = () => {
   const loadProfile = async (): Promise<void> => {
     try {
       const res = await fetch(
-        `https://tic-tac-toe-7u0u.onrender.com/api/users/play/`,
+        `https://tic-tac-toe-7u0u.onrender.com/api/users/play`,
         {
           method: "GET",
           headers: {
