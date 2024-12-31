@@ -18,11 +18,17 @@ app.use(
   cors({
     origin: "https://tic-tac-toe-chi-pink.vercel.app",
     credentials: true,
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "Set-Cookie",
+      "Access-Control-Allow-Credentials",
+    ],
   })
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.set("trust proxy", true);
+app.set("trust proxy", 1);
 app.use(
   cookieSession({
     name: "session",
@@ -33,8 +39,7 @@ app.use(
     maxAge: 24 * 60 * 60 * 1000,
     httpOnly: true,
     secure: true,
-    sameSite: "lax",
-    // secureProxy: true,
+    sameSite: "none",
   })
 );
 
