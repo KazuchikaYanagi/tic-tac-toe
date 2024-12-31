@@ -101,10 +101,10 @@ const loginUser = async (
       return;
     }
 
-    // (req as AuthenticatedRequest).session!.isAuthenticated = true;
-    // (req as AuthenticatedRequest).session!.userId = user.id.toString();
-    req.session!.isAuthenticated = true;
-    req.session!.userId = user.id.toString();
+    (req as AuthenticatedRequest).session!.isAuthenticated = true;
+    (req as AuthenticatedRequest).session!.userId = user.id.toString();
+    // req.session!.isAuthenticated = true;
+    // req.session!.userId = user.id.toString();
 
     console.log("Session after login:", req.session);
     res.json({ message: "Login successful" });

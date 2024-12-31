@@ -82,10 +82,10 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             res.status(403).json({ message: "Password is incorrect" });
             return;
         }
-        // (req as AuthenticatedRequest).session!.isAuthenticated = true;
-        // (req as AuthenticatedRequest).session!.userId = user.id.toString();
         req.session.isAuthenticated = true;
         req.session.userId = user.id.toString();
+        // req.session!.isAuthenticated = true;
+        // req.session!.userId = user.id.toString();
         console.log("Session after login:", req.session);
         res.json({ message: "Login successful" });
         // res.redirect("/play");
