@@ -2,14 +2,8 @@ interface FormProps {
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   frag: boolean;
   errorMessage: string;
-  onIsLoading: () => void;
 }
-const Form: React.FC<FormProps> = ({
-  onSubmit,
-  frag,
-  errorMessage,
-  onIsLoading,
-}) => {
+const Form: React.FC<FormProps> = ({ onSubmit, frag, errorMessage }) => {
   return (
     <div className="px-8">
       <h2 className="py-8 text-3xl font-semibold md:text-5xl font-MICRO">
@@ -51,7 +45,6 @@ const Form: React.FC<FormProps> = ({
         <button
           type="submit"
           className="p-1 px-2 text-lg bg-blue-700 md:p-2 md:px-4 md:text-2xl text-stone-200 font-MICRO"
-          onClick={onIsLoading}
         >
           {frag ? "Sign Up" : "Log In"}
         </button>
