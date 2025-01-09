@@ -33,7 +33,6 @@ const SignIn = () => {
     const data = await res.json();
     console.log(data);
     if (res.ok) {
-      setIsLoading(true);
       navigate("/play");
       setIsLoading(false);
     } else {
@@ -66,13 +65,14 @@ const SignIn = () => {
     const data = await res.json();
     setErrorMessage(data.message);
     setFrag((prev) => !prev);
-    console.log(data);
   };
 
   const fragHandle = () => {
     setFrag((prev) => !prev);
     setErrorMessage("");
   };
+
+  const handleIsLoading = () => setIsLoading((prevState) => !prevState);
 
   return (
     <main className="h-screen pt-20 bg-stone-800">
@@ -84,6 +84,7 @@ const SignIn = () => {
             onSubmit={frag ? signUpForm : loginForm}
             frag={frag}
             errorMessage={errorMessage}
+            onIsLoading={handleIsLoading}
           />
           {errorMessage && (
             <div className="flex items-center mx-auto text-rose-600 w-[90%]">
