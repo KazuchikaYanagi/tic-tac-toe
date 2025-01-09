@@ -73,6 +73,8 @@ const SignIn = () => {
     setErrorMessage("");
   };
 
+  const handleIsLoading = () => setIsLoading((prevState) => !prevState);
+
   return (
     <main className="h-screen pt-20 bg-stone-800">
       {isLoading ? (
@@ -83,6 +85,7 @@ const SignIn = () => {
             onSubmit={frag ? signUpForm : loginForm}
             frag={frag}
             errorMessage={errorMessage}
+            onIsLoading={handleIsLoading}
           />
           {errorMessage && (
             <div className="flex items-center mx-auto text-rose-600 w-[90%]">
