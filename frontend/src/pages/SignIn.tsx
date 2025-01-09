@@ -13,6 +13,7 @@ const SignIn = () => {
     e: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     e.preventDefault();
+    setIsLoading(true);
     setErrorMessage("");
     const formData = new FormData(e.currentTarget);
     const res = await fetch(
@@ -32,10 +33,9 @@ const SignIn = () => {
     );
     const data = await res.json();
     console.log(data);
-    setIsLoading(true);
     if (res.ok) {
-      navigate("/play");
       setIsLoading(false);
+      navigate("/play");
     } else {
       setErrorMessage(data.message || "Failed to log in");
       console.error("Error:", data.message);
@@ -73,8 +73,6 @@ const SignIn = () => {
     setErrorMessage("");
   };
 
-  const handleIsLoading = () => setIsLoading((prevState) => !prevState);
-
   return (
     <main className="h-screen pt-20 bg-stone-800">
       {isLoading ? (
@@ -85,7 +83,6 @@ const SignIn = () => {
             onSubmit={frag ? signUpForm : loginForm}
             frag={frag}
             errorMessage={errorMessage}
-            onIsLoading={handleIsLoading}
           />
           {errorMessage && (
             <div className="flex items-center mx-auto text-rose-600 w-[90%]">
